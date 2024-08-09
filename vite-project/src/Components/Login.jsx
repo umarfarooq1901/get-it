@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
 
       const [email, setEmail] = useState('');
       const [password, setPassword] = useState('');
-      const [loading, setLoading] = useState(false)
+      const [loading, setLoading] = useState(false);
+      const navigate = useNavigate();
 
 
       const userLogin = async ()=>{
@@ -21,6 +23,7 @@ const Login = () => {
             toast.success("Logged in Successfully!");
             const {token} = res.data;
             localStorage.setItem("token", token);
+            navigate('/')
            }
 
            else if(res.data.message === 'User Not Found'){

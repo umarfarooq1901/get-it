@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-const {config} = require('dotenv');
-config({ path: './.env' });
 
 
-const dBport = process.env.DB_PORT
+
+const dBport = "27017"
 
 const connectDb = async()=>{
     try {

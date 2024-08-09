@@ -2,12 +2,15 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import GalleryCard from './SharedComponents/GalleryCard';
 import '../Styles/Gallery.scss'
+import Authorization from '../Auth/Authorization';
 
 const Gallery = () => {
+  const checkAuth = Authorization(); //HOC to check the authorization of the user
             const [photos, setPhotos] = useState([]);
             const [loading, setLoading] = useState(true);
             const [query, setQuery] = useState('nature');
             const [errorMessage, setErrorMessage] = useState('');
+            const [isAuthorization, setAuthorization] = useState(false);
 
 
         const fetchPhotos = async (query)=>{
@@ -50,8 +53,18 @@ const Gallery = () => {
 
 
         useEffect(()=>{
+            (async()=>{
+              const isAuth = await checkAuth();
+              setAuthorization(isAuth);
+            })()
+
+            if(isAuthorization){
               fetchPhotos(query);
-        }, [loading])
+            }
+
+
+             
+        }, [isAuthorization, loading])
 
 
 

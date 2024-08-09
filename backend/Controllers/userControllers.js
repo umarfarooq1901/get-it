@@ -93,7 +93,8 @@ const handleUserLogin = async (req, res)=>{
 const handleDeleteUser = async (req, res)=>{
             try {
 
-                const {_id }= req.params;
+                // const {_id }= req.params;
+                const {_id }= req.user;
 
                 if(!_id && _id === null && _id === undefined){
                   return messageHandler(res, 400, "ID Not passed!");
@@ -122,7 +123,10 @@ const handleDeleteUser = async (req, res)=>{
 const handleUserUpdate = async(req, res)=>{
         try {
             const {username, email, password} = req.body;
-            const{ _id} = req.params;
+
+            // const{ _id} = req.params;
+            const{ _id} = req.user;
+
             if(!_id){
                     return messageHandler(res, 400, "ID Not passed!");
                 }
@@ -158,12 +162,11 @@ const handleUserUpdate = async(req, res)=>{
 const handleUserDetails = async (req, res)=>{
     try {
 
-               const{ _id} = req.params;
+            //    const{ _id} = req.params;
+               const{ _id} = req.user;
 
                 if(_id){
-                    console.log(_id);
-                    
-                        
+                    // console.log(_id);      
                     const getUser = await User.findById(_id);
 
                     if(getUser){

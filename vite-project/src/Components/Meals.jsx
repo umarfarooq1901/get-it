@@ -2,12 +2,15 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../Styles/Meals.scss';
 import MealsCard from './SharedComponents/MealsCard';
+import Authorization from '../Auth/Authorization';
 
 const Meals = () => {
+  const checkAuth = Authorization(); 
   const [name, setName] = useState('apple');
   const [meal, setMeal] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isAuthorization, setAuthorization] = useState(false)
 
   const findRecipe = async (name) => {
     if (!name.trim()) {
@@ -37,8 +40,15 @@ const Meals = () => {
   };
 
   useEffect(() => {
-    findRecipe(name);
-  }, [loading]);
+  
+    (async()=>{
+      const isAuth = await checkAuth();
+      setAuthorization(isAuth);
+    })();
+    if(isAuthorization){
+      findRecipe(name);
+    }
+  }, [isAuthorization, loading]);
 
   return (
     <div className='menu '>

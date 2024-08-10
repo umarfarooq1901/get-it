@@ -1,0 +1,61 @@
+@import "./global.scss";
+
+.hero-section{
+    // background-color: black;
+    height: 100vh;
+    background-image: url(../assets/hero-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: $white;
+    position: relative;
+    top:-8px;
+
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+ 
+    h1, p {
+        position: relative;
+        z-index: 2;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+      }
+      h1{
+        color: $orange-shade;
+      }
+}
+
+
+
+
+@media (min-width: 768px) {
+.hero-section h1 {
+  font-size: 2rem; // for medium screens
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+}
+}
+
+@media (min-width: 992px) {
+.hero-section h1 {
+  font-size: 2.5rem; // for large screens
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+}
+}

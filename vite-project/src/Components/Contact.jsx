@@ -1,13 +1,16 @@
 import React from 'react'
 import '../Styles/Contact.scss'
-import Home from '../Components/Home'
+import '../Styles/Home.scss'
+import HeroSection from './SharedComponents/HeroSection'
+
+
 
 const Contact = () => {
   return (
     <>
-    
     <div className='contact'>
-      <h1>This is contact page</h1>
+    <HeroSection/>
+     
     </div>
     </>
   

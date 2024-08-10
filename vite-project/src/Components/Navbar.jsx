@@ -35,7 +35,7 @@ const Navbar = () => {
                               <Link className='nav-link active' to= '/gallery'>Gallery</Link>
                          </li>
 
-                         <li className='nav-item'> <Link className='nav-link active' to='/Blog'>Blog</Link> </li>
+                         <li className='nav-item'> <Link className='nav-link active' to='/Blog'>News</Link> </li>
        
          </ul>
 

@@ -1,12 +1,13 @@
 import React from 'react'
 import '../Styles/Navbar.scss'
 import { Link } from 'react-router-dom'
-import Logo from '../assets/logo.png';
+import Logo from '../assets/darklogo.png';
+
 
 const Navbar = () => {
   return (
    <>
-        <div className="navbar">
+        <div className="navbar" style={{margin:'0', padding:'0'}}>
 
 
     <nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
@@ -39,13 +40,13 @@ const Navbar = () => {
          </ul>
 
 
-         <ul className='navbar-nav '>
-               <li className='nav-item'>
-                    <Link className='nav-link active' to = '/signup'>Signup</Link>
+         <ul className='navbar-nav registration'>
+               <li className='nav-item reg-btn'>
+                    <Link className='nav-link active btn-to' to = '/signup'>Signup</Link>
                </li>
 
-               <li className='nav-item'>
-                         <Link className='nav-link active' to = '/login'>Login</Link>
+               <li className='nav-item reg-btn'>
+                         <Link className='nav-link active btn-to' to = '/login'>Login</Link>
                </li>
          </ul>
     </div>

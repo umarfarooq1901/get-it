@@ -71,7 +71,7 @@ const Gallery = () => {
 
   return (
     <div className='gallery'>
-        <h1 className="text-center my-5">Find The Best Pictures</h1>
+        <h1 className="text-center my-5">Search and view beautiful photos curated just for you.</h1>
 
        <div className="form d-flex justify-content-center my-5">
          <form className="form-main me-2 w-50">

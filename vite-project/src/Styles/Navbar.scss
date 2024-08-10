@@ -1,19 +1,37 @@
-// .navbar{
-//    background-color: rgb(44, 44, 44);
-//    height: 10vh;
+@import "./global.scss";
+
+.navbar{
+ 
   
-//     >ul{
-//         display: flex;
-//         height: 10vh;
-//         align-items: center;
-     
-//         >li{
-//             list-style: none;
-//             margin-right: 5rem;
-//             >a{
-//                     text-decoration: none;
-//                     color: whitesmoke;
-//             }
-//         }
-//     }
-// }
+    .navbar-nav .nav-link{
+        font-size: large;
+        transition: all 0.3s ease-in;
+        // &:hover{
+        //     color: $orange;
+        //     font-size: larger;
+        //   }
+    
+    }
+.navbar-nav .nav-link:hover {
+    color: $orange; /* Change text color on hover (example: orange) */
+ 
+   
+  }
+
+
+    .reg-btn{
+       
+        .btn-to{
+            background-color: $orange !important;
+            padding: 10px 25px !important;
+            border-radius: 25px;
+            color: white !important;
+            margin-right: 10px !important;
+
+            &:hover{
+                background-color: $orange-shade !important;
+            }
+        }
+    }
+
+}

@@ -52,7 +52,7 @@ const Meals = () => {
 
   return (
     <div className='menu '>
-      <h1 className='text-center my-5'>Find Your Favourite Recipe</h1>
+      <h1 className='text-center my-5'>Find and try new recipes with our extensive collection.</h1>
 
       <div className="form d-flex justify-content-center my-5">
         <form className="form-main me-2 w-50">

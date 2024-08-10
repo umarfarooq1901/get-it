@@ -73,7 +73,7 @@ const Blog = () => {
   <>
    
         <div className='blog'>
-            <h1 className='text-center my-5'>News</h1>
+            <h1 className='text-center my-5'>Stay informed with the latest news articles</h1>
 
             <div className="form d-flex justify-content-center my-5">
                 <form className="form-main me-2 w-50">

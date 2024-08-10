@@ -23,7 +23,11 @@ const Login = () => {
             toast.success("Logged in Successfully!");
             const {token} = res.data;
             localStorage.setItem("token", token);
-            navigate('/')
+
+            setTimeout(()=>{
+              navigate('/')
+
+            }, 2000)
            }
 
            else if(res.data.message === 'User Not Found'){

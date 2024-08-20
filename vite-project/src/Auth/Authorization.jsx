@@ -27,7 +27,6 @@ const Authorization = () => {
                             else if(res.data.message === "verified"){
                                 const id = res.data.decode._id;
                                 localStorage.setItem("id", id);
-                                toast.success("User Verified successfully");
                                 return true;
 
                             }

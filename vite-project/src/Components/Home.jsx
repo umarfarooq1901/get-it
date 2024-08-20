@@ -7,6 +7,7 @@ import GalleryPic from '../assets/features/gallerypic.jpg'
 import blogpic from '../assets/features/blogpic.jpg'
 import About from '../assets/about.jpg'
 import '../Styles/Hero.scss'
+import { FaArrowRight } from "react-icons/fa";
 
 
 const Home = () => {
@@ -80,7 +81,7 @@ const Home = () => {
   <div className="container">
     <h2>Join Our Community Today</h2>
     <p className = 'mt-3'>Create an account to start sharing your blogs, discovering new recipes, and exploring stunning photos.</p>
-    <button className="btn btn-success btn-lg my-3"><a href="/signup" style={{color:"white", textDecoration:"none"}}>Get Started</a></button>
+    <button className="btn btn-success btn-lg my-3"><a href="/signup" style={{color:"white", textDecoration:"none"}}>Get Started <span className='mx-2'><FaArrowRight/></span></a></button>
   </div>
 </section>
 

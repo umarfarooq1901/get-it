@@ -14,7 +14,12 @@ const Home = () => {
   return (
     <div className='home'>
    
-        <HeroSection/>
+        <HeroSection
+        
+        heading= "Discover Recipes, Latest News, Read & Share Blogs, and Browse Stunning Photos."
+        subHeading="Create and explore blogs, find your next favorite recipe, stay updated with the latest news, and browse stunning photos from around the world."
+        
+        />
 
         <section className='features-section my-5'>
 
@@ -84,6 +89,10 @@ const Home = () => {
     <button className="btn btn-success btn-lg my-3"><a href="/signup" style={{color:"white", textDecoration:"none"}}>Get Started <span className='mx-2'><FaArrowRight/></span></a></button>
   </div>
 </section>
+
+
+
+
 
 
 

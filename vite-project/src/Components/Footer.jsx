@@ -25,7 +25,7 @@ const Footer = () => {
           <li className="nav-item mb-2"><Link className="nav-link px-2 text-muted" to= '/contact'>Contact</Link></li>
           <li className="nav-item mb-2"><Link className="nav-link px-2 text-muted" to= '/meals'>Meals</Link></li>
           <li className="nav-item mb-2"><Link className="nav-link px-2 text-muted" to= '/gallery'>Gallery</Link></li>
-          <li className="nav-item mb-2"><Link className="nav-link px-2 text-muted" to= '/blog'>Blog</Link></li>
+          <li className="nav-item mb-2"><Link className="nav-link px-2 text-muted" to= '/blog'>News</Link></li>
     </ul>
   </footer>
 </div>

@@ -42,7 +42,7 @@ const Home = () => {
                           <div className="col-md-3">
                             <div className="feature-card">
                             <h3>Stunning Photos</h3>
-                            <img src={GalleryPic} alt="Delicious Recipes" className='img-fluid rounded my-3' style={{height: "460px"}} />
+                            <img src={GalleryPic} alt="Delicious Recipes" className='img-fluid rounded my-3'  />
                             <p>Explore beautiful images curated just for you.</p>
                             </div>
                           </div>

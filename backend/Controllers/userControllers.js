@@ -2,6 +2,11 @@ const User = require('../modals/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const messageHandler = require('../config/messageHandler');
+const { config } = require("dotenv");
+
+
+// Load environment variables from the .env file
+config({ path: './.env' });
 
 
 
@@ -94,7 +99,9 @@ const handleDeleteUser = async (req, res)=>{
             try {
 
                 // const {_id }= req.params;
-                const {_id }= req.user;
+                const {_id} = req.user;
+                console.log(_id);
+                
 
                 if(!_id && _id === null && _id === undefined){
                   return messageHandler(res, 400, "ID Not passed!");
@@ -163,14 +170,17 @@ const handleUserDetails = async (req, res)=>{
     try {
 
             //    const{ _id} = req.params;
-               const{ _id} = req.user;
+            // Extract _id from req.user (set by the middleware)
+               const { _id} = req.user;
+               console.log("User ID from token:", _id);
 
                 if(_id){
-                    // console.log(_id);      
+                    // console.log(_id);  
+                     // Query the database for the user by ID    
                     const getUser = await User.findById(_id);
 
                     if(getUser){
-
+                        // Return user details
                         res.status(200).json({message: "User Details Fetched Successfully", getUser});
                     }
 
@@ -188,5 +198,7 @@ const handleUserDetails = async (req, res)=>{
     }
 }
 
+
+ 
 
 module.exports = {handleUserSignUp, handleUserLogin, handleDeleteUser, handleUserUpdate, handleUserDetails};

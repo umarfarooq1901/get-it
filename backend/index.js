@@ -42,10 +42,11 @@ app.post('/user/signup', handleUserSignUp);
 app.post('/user/login', handleUserLogin);
 
 
+
 //user authenticated Routes
-app.delete('/user/delete/:_id', isAuthenticated, handleDeleteUser);
-app.put('/user/update/:_id', isAuthenticated, handleUserUpdate);
-app.get('/user/details/:_id', isAuthenticated, handleUserDetails);
+app.delete('/user/delete/:token', isAuthenticated, handleDeleteUser);
+app.put('/user/update/:token', isAuthenticated, handleUserUpdate);
+app.get('/user/details/:token', isAuthenticated, handleUserDetails);
 
 app.listen(port, () => {
   console.log(`server is running on port: ${port}`);

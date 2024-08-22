@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom';
 
+
 const Signup = () => {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
@@ -42,10 +43,10 @@ const Signup = () => {
 
     return (
         <>
-            <div className='Signup mt-5' style={{ minHeight: '100vh' }}>
+            <div className='Signup mt-5 d-flex flex-column align-items-center' style={{ minHeight: '100vh' }}>
                 <ToastContainer />
-
-                <form className='form'>
+                <h1 className='text-center mb-5'>Register with us</h1>
+                <form className='form w-75'>
                     <div className="row mb-3">
                         <label className="col-sm-2 col-form-label">Username</label>
                         <div className="col-sm-10">
@@ -80,7 +81,7 @@ const Signup = () => {
                         </div>
                     </div>
                 </form>
-                <button type="submit" className="btn btn-success mt-4" onClick={handleClick}>
+                <button type="submit" className="btn btn-success mt-4 w-25" onClick={handleClick}>
                     {loading ? "Signing up..." : "Sign Up"}
                 </button>
             </div>

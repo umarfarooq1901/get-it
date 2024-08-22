@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/darklogo.png';
 import { CiLogin, CiLogout } from "react-icons/ci";
 import { SiGnuprivacyguard } from "react-icons/si";
 import '../Styles/Navbar.scss'
+import axios from 'axios';
 
 const Navbar = ({ isLogged, handleLogOut }) => {
+
+    const [email, setEmail] = useState("");
+    const token = localStorage.getItem('token');
+    const getData = async ()=>{
+  
+      try {
+          const baseUrl = 'http://localhost:4000';
+          const res = await axios.get(`${baseUrl}/user/details/${token}`);
+          setEmail(res.data.getUser.email);
+          // console.log(res.data.getUser.email)
+        } catch (error) {
+          console.log(error);
+          
+        }
+       
+      }
+
+        useEffect(()=>{
+          if(token){
+
+            getData()
+          }
+
+          
+        }, [token])
+
+
+
   return (
     <div className="navbar" style={{ margin: '0', padding: '0' }}>
       <nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
@@ -36,6 +65,19 @@ const Navbar = ({ isLogged, handleLogOut }) => {
                 <Link className='nav-link active' to='/Blog'>News</Link>
               </li>
             </ul>
+        {email !== '' ?(    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item rounded text-white text-center p-2" style={{backgroundColor: '#f08829'}}>
+                {email}
+              </li>
+              </ul>) : (    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item ">
+               {}
+              </li>
+              </ul>) }
+
+        
+
+
 
             <ul className='navbar-nav registration'>
               {isLogged ? (

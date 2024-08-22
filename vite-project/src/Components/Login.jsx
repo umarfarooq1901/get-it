@@ -41,13 +41,14 @@ const Login = ({ setIsLogged }) => {
   };
 
   return (
-    <div className='Login mt-5' style={{ minHeight: '100vh' }}>
+    <div className='Login mt-5 d-flex flex-column align-items-center' style={{ minHeight: '100vh' }}>
       <ToastContainer />
-      <form className='Login-form'>
-        <div className="row mb-3">
+      <h1 className='text-center mb-5'>Login</h1>
+      <form className='Login-form  w-75'>
+        <div className="row mb-3 ">
           <label className="col-sm-2 col-form-label">Email</label>
           <div className="col-sm-10">
-            <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" className="form-control " value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
         </div>
         <div className="row mb-3">
@@ -57,7 +58,7 @@ const Login = ({ setIsLogged }) => {
           </div>
         </div>
       </form>
-      <button type="submit" className="btn btn-success mt-4" onClick={handleLogin}>
+      <button type="submit" className="btn btn-success mt-4 w-25" onClick={handleLogin}>
         {loading ? "Logging in..." : "Login"}
       </button>
     </div>

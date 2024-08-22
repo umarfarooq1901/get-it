@@ -20,6 +20,7 @@ const delay = async (promise) => {
 };
 
 const App = () => {
+  
   // Manage login state globally
   const [isLogged, setIsLogged] = useState(!!localStorage.getItem('token'));
 

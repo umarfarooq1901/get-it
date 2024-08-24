@@ -100,7 +100,7 @@ const handleDeleteUser = async (req, res)=>{
 
                 // const {_id }= req.params;
                 const {_id} = req.user;
-                console.log(_id);
+            
                 
 
                 if(!_id && _id === null && _id === undefined){
@@ -172,7 +172,7 @@ const handleUserDetails = async (req, res)=>{
             //    const{ _id} = req.params;
             // Extract _id from req.user (set by the middleware)
                const { _id} = req.user;
-               console.log("User ID from token:", _id);
+            
 
                 if(_id){
                     // console.log(_id);  

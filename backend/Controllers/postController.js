@@ -43,7 +43,7 @@ const handleCreatePost = async (req, res)=>{
                     if(!upload){
                         return  messageHandler(res, 200, "Error while uploading the file")
                     }
-                    console.log(upload)
+              
                     const imageUrl = upload.secure_url;
 
                     const newPost = await Post.create({title, imageUrl, author, content});

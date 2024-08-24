@@ -18,3 +18,7 @@ Thumbs.db
 
 # Other
 *.swp
+
+
+# upload folder
+uploads

@@ -51,8 +51,8 @@ app.put('/user/update/:token', isAuthenticated, handleUserUpdate);
 app.get('/user/details/:token', isAuthenticated, handleUserDetails);
 
 
-// api routes for post
 
+// api routes for post
 app.post('/post/createPost/:token', isAuthenticated, multimid, handleCreatePost);
 
 app.listen(port, () => {
